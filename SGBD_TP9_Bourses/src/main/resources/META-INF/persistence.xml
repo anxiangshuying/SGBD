@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="erasmus" transaction-type="RESOURCE_LOCAL">
+		<class>com.polytech.model.Bourse</class>
+		<class>com.polytech.model.Candidature</class>
+		<class>com.polytech.model.Enseignant</class>
+		<class>com.polytech.model.Demander</class>
+		<class>com.polytech.model.Plan</class>
+		<class>com.polytech.model.Score</class>
+		<properties>
+		<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/erasmus?serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="" />
+			<property name="hibernate.connection.pool_size" value="10" />
+			<!-- MySQL8Dialect is available in hibernate bundle 5.3.1.Final -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			
+		</properties>
+	
+	</persistence-unit>
+</persistence>
